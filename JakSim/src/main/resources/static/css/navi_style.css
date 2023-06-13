@@ -1,0 +1,42 @@
+/*@font-face{
+    font-family: abster;
+    src: url(static/abster-webfont.woff) format('woff');
+}*/
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(images/Group40267.png);
+}
+
+.container .header{
+
+}
+
+#nav-head{
+    font-weight:bold;
+    color: #5213DD;
+}
+
+#index_subTitle{
+    margin-top: 7vh;
+    margin-left: 70px;
+}
+#index_subTitle > h3 {
+    color:#747474;
+}
+#index_trainer_container{
+    overflow:auto;
+}
+#index_trainer_table{
+    margin: 30px auto;
+    table-layout:fixed;
+    border-collapse: separate;
+    border-spacing: 6rem 1rem;
+}
