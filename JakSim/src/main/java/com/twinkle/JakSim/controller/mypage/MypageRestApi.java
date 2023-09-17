@@ -43,8 +43,9 @@ public class MypageRestApi {
     }
 
 
-    @GetMapping("login/{page}")
-    public List<LoginLogDto> getLoginList(@PathVariable("userId") String username, @PathVariable("page")int pageNum){
-        return loginLogService.findByUsername(username, pageNum);
+    @GetMapping("/login/{page}")
+    public List<LoginLogDto> getLoginList(@AuthenticationPrincipal User user, @PathVariable("page")int pageNum){
+        return loginLogService.findByUsername(user.getUsername(), pageNum);
     }
+
 }

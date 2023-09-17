@@ -51,10 +51,11 @@ public class MypageController {
 
     @GetMapping("/history/login")
     public String logPage(@AuthenticationPrincipal User user, Model model){
-        model.addAttribute("head_title", user.getUsername() + "님 이력확인");
+        model.addAttribute("head_title", user.getUsername() + "님 접속 이력확인");
         model.addAttribute("user_info", accountService.findByUsername(user.getUsername()));
 
-        model.addAttribute("access_log", loginLogService.findByUsername(user.getUsername(), 2));
+        model.addAttribute("totalPage", loginLogService.getTotalPages(user.getUsername()));
+
         return String.format(defaultPath + "log");
     }
 

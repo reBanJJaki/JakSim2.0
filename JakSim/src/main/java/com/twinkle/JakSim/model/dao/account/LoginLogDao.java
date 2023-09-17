@@ -147,4 +147,15 @@ public class LoginLogDao {
         }
         return logList;
     }
+
+    public int getTotalPages(String username) {
+        int result;
+        try{
+           String sql = "SELECT COUNT(*) FROM LOGIN_LOG WHERE USER_ID = ? GROUP BY USER_ID";
+           result = jdbcTemplate.queryForObject(sql, Integer.class, username);
+        }catch (EmptyResultDataAccessException e){
+            result = 0;
+        }
+        return (result / 20)+1;
+    }
 }

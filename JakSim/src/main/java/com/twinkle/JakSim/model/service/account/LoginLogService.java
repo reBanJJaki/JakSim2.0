@@ -60,4 +60,8 @@ public class LoginLogService {
     public List<LoginLogStat> getAmountGroupUser(String start, String end, boolean order) {
         return loginLogDao.getAmountGroupUser(getDefaultStart(start), getDefaultEnd(end), order);
     }
+
+    public int getTotalPages(String username) {
+        return loginLogDao.getTotalPages(username);
+    }
 }
